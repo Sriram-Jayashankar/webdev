@@ -8,7 +8,6 @@ export default function Navbar(props) {
   {
     props.togglemode();
     setmodetogglebtn(`convert to ${props.mode}`)
-    
   }
   return (
     <>

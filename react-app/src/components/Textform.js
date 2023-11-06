@@ -8,6 +8,7 @@ export default function Textform(props) {
     {   
         // string var=text.toUpperCase
         settext(text.toUpperCase());
+        props.putalertfn("changed to uppercase","success")
     }
     const addnamefn=()=>
     {
@@ -18,6 +19,8 @@ export default function Textform(props) {
     }
     const copytoclipboard=()=>{
         navigator.clipboard.writeText(text);
+        props.putalertfn("copied to clipboard","success")
+
     }
   return (
         <div className='container my-3'style={{
