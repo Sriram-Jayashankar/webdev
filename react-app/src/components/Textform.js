@@ -22,6 +22,14 @@ export default function Textform(props) {
         props.putalertfn("copied to clipboard","success")
 
     }
+    const findwords=(txt)=>
+    {
+        let a=txt.split(/[ ]+/);
+        var filtered = a.filter(function (el) {
+            return el !== '';
+          });
+        return filtered.length;
+    }
   return (
         <div className='container my-3'style={{
         backgroundColor: props.mode==="light"?"white":"black",
@@ -42,7 +50,8 @@ export default function Textform(props) {
 
         <div className="container">
             <h1>summary</h1>
-            <p>{text.split(/[ ]+/).length}+words+{text.length}+letters
+            <p>{findwords(text)}words {text.length} letters
+            {console.log(text.split(/[ ]+/))}
             </p>
         </div>
         </div>
