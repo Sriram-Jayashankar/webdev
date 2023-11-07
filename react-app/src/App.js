@@ -1,12 +1,14 @@
 import './App.css';
 import Alert from './components/Alert';
-// import Accordition from './components/Accordition';
+import Accordition from './components/Accordition';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
-
 import React, { useState } from 'react'
-
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 function App() {
   const [alert,setalert]= useState(null);
@@ -38,10 +40,15 @@ function App() {
 
   return (
     <>
+      <Router>
     <Navbar title="textutils" navbar1="first" navbar2="second" mode={mode} togglemode={togglemode} putalertfn={putalertfn}/>
     <Alert alert={alert} />
-    <Textform startingtext="enter text" mode={mode} togglemode={togglemode} putalertfn={putalertfn}/>
-    {/* <Accordition/> */}
+  
+      <Routes>
+            <Route exact path="/" element={<Textform startingtext="enter text" mode={mode} togglemode={togglemode} putalertfn={putalertfn}/>}/>
+            <Route exact path="/first" element={<Accordition/> }/>
+      </Routes>
+    </Router>
     </>
   );
 }
