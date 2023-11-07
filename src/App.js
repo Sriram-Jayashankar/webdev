@@ -40,13 +40,13 @@ function App() {
 
   return (
     <>
-      <Router>
+      <Router basename='/webdev'>
     <Navbar title="textutils" navbar1="first" navbar2="second" mode={mode} togglemode={togglemode} putalertfn={putalertfn}/>
     <Alert alert={alert} />
   
       <Routes>
-            <Route exact path="/" element={<Textform startingtext="enter text" mode={mode} togglemode={togglemode} putalertfn={putalertfn}/>}/>
-            <Route exact path="/first" element={<Accordition/> }/>
+            <Route path="/" element={<Textform startingtext="enter text" mode={mode} togglemode={togglemode} putalertfn={putalertfn}/>}/>
+            <Route path="/first" element={<Accordition/> }/>
       </Routes>
     </Router>
     </>
